@@ -11,5 +11,10 @@ pipeline {
                 sh 'mvn -B -DskipTests clean package'
             }
         }
+        stage('check the app'){
+            steps{
+                sh 'ls -al ./webapp/target/*.war'
+                }
+            }
     }
 }
